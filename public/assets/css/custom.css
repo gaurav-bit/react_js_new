@@ -1,0 +1,22 @@
+.rhm{
+    transition: transform 4s;
+    transform: scale(1);
+}
+.rhm :hover{
+    transform: scale(1.05);
+}
+#root{
+    background-color: #f8f9fa!important;
+}
+.mt-n1{
+    margin-top: -1.3rem !important;
+}
+.ml-n1{
+    margin-left: -0.7rem !important;
+}
+.fa-shopping-cart{
+    cursor: pointer;
+}
+.shopping-cart-footer{
+    border-top: 1px solid #e1e7ec;
+}
