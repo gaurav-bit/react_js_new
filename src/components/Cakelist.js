@@ -2,7 +2,6 @@
 import Cake from './Cake';
 import axios from 'axios';
 import { useEffect, useState } from "react";
-
 function Cakelist(){
     var [cakelist,setCakes] = useState([]);
     useEffect(()=>{
