@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 
 function Confirm(props){
     // console.log(props);
-
     var submit = (event)=>{
         event.preventDefault();
         // var data = props.orderdata;
