@@ -3,9 +3,12 @@ import { useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import {loginmiddleware} from "../reduxstore/middlewares"
+import Constant,{raheem,avadhut} from './Constant';
 
 function Login(props) {
-
+    //console.log("constant value",raheem+"avadhut constant"+avadhut);
+    console.log(`raheem constant value ${raheem}
+avadhut value ${avadhut}`);
     const [email, setEmail] = useState('');
     const [pwd, setPassword] = useState('');
     const [emailError, setemailError] = useState('');
@@ -16,8 +19,9 @@ function Login(props) {
         var emailErr="";
         var passwordErr="";
 		var isValid=true;
-		var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
-		// alert(email);
+		//var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+		var pattern = Constant;
+        // alert(email);
 		if(!email){
 			isValid=false;
 			emailErr ="Email is required";

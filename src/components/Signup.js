@@ -1,7 +1,7 @@
 import { React } from 'react';
 import { useState } from 'react';
 import axios from "axios";
-
+import Constant,{validate_pwd} from './Constant'
 function Signup() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -19,8 +19,9 @@ function Signup() {
         var passwordErr="";
         var password2Err="";
 		var isValid=true;
-		var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
-		// alert(email);
+		//var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+		var pattern = Constant;
+        // alert(email);
 		if(!email){
 			isValid=false;
 			emailErr ="Email is required";
@@ -36,6 +37,10 @@ function Signup() {
 			isValid=false;
 			passwordErr = "Password is required";
 		}
+        else if(!validate_pwd.test(pwd)){
+            isValid=false;
+			passwordErr = "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character";
+        }
 		if(!pwd2){
 			isValid=false;
 			password2Err="Confirm Password is required";

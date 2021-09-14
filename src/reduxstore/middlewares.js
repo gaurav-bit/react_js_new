@@ -3,6 +3,7 @@ export function loginmiddleware(data){
 //    alert(JSON.stringify(data))
     return function(dispatch){
         // console.log(process.env);
+        
         dispatch({
             type:"LOGIN_STARTED"
         })

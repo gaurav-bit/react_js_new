@@ -9,6 +9,7 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Cakedetail from "./components/Cakedetail";
 import Search from "./components/Search";
 import Pagenotfound from "./components/Pagenotfound";
+import ROUTES from "./components/Route";
 
 function App() {
   return (
@@ -16,8 +17,8 @@ function App() {
           <Navbar></Navbar>
           <Switch>
                 <Route exact path="/"> <Home/></Route>
-                <Route exact path="/register"> <Signup/></Route>
-                <Route exact path="/login"> <Login/></Route>
+                <Route exact path={ROUTES.Register}> <Signup/></Route>
+                <Route exact path={ROUTES.Login}> <Login/></Route>
                 <Route exact path="/search" component={Search}></Route>
                 <Route exact path="/cake/:cakeid" component={Cakedetail}></Route>
                 <Route exact path="/cart" component={Cart}></Route>
