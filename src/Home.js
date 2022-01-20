@@ -5,7 +5,7 @@ function Home() {
   return (
         <>
             <Carousel></Carousel>
-            <Cakelist></Cakelist>
+            <Cakelist></Cakeli
         </>
    
   );
